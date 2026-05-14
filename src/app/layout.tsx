@@ -58,7 +58,13 @@ export default function RootLayout({
             >
               guitar-coach 🎸
             </Link>
-            <nav className="text-sm text-[color:var(--ink-soft)] flex gap-4">
+            <nav className="text-sm text-[color:var(--ink-soft)] flex gap-4 flex-wrap">
+              <Link
+                href="/chords"
+                className="hover:text-[color:var(--ink)] underline-offset-4 hover:underline"
+              >
+                コード一覧
+              </Link>
               <Link
                 href="/songs"
                 className="hover:text-[color:var(--ink)] underline-offset-4 hover:underline"
