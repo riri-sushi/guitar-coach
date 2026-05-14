@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #fbf6e9;
+  --paper-warm: #f6efdb;
+  --ink: #2a2520;
+  --ink-soft: #5a4f43;
+  --rule: #d6cdb5;
+  --margin: #c87878;
+  --accent: #a06a3a;
+  --accent-soft: #d9b88a;
+  --highlight: #f5e3b0;
+}
+
+@theme inline {
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-hand: var(--font-zen-kurenaido), var(--font-geist-sans);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1c1814;
+    --paper-warm: #25201a;
+    --ink: #ece1cd;
+    --ink-soft: #b6a78f;
+    --rule: #3d362c;
+    --margin: #c87878;
+    --accent: #d9b88a;
+    --accent-soft: #6d4f31;
+    --highlight: #4a3c1c;
+  }
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 27px,
+    var(--rule) 27px,
+    var(--rule) 28px,
+    transparent 28px
+  );
+  background-size: 100% 28px;
+  font-family: var(--font-sans);
+}
+
+.notebook-margin {
+  position: relative;
+}
+.notebook-margin::before {
+  content: "";
+  position: absolute;
+  left: 24px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--margin);
+  opacity: 0.55;
+}
+
+.font-hand {
+  font-family: var(--font-hand);
+}
+
+.card-paper {
+  background: var(--paper-warm);
+  border: 1px solid var(--rule);
+  box-shadow: 0 1px 0 var(--rule), 0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+.tape {
+  position: relative;
+}
+.tape::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 56px;
+  height: 16px;
+  background: rgba(220, 180, 90, 0.45);
+  border-radius: 1px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+}
